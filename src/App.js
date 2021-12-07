@@ -12,17 +12,24 @@ export default function App() {
 
   // create an addToCart function that takes in a product as a param
   // using the ...spread operator add the product to the cart array
+  const addToCart = (product) => {
+      setCart([...cart, product])
+  }
 
   // create an removeFromCart function that takes in an index as a param
   // using Array.filter remove create a new array where that item is removed
 
+  const removeFromCart = (index) =>{
+      setCart(cart.filter((product, i) => i !== index))
+  }
+
   return (
     <div className="App">
-      <h1>Big Time Shopping</h1>
+      <h1>Carls grocery store</h1>
       <Form />
       <div className="products">
-        <AllTheThings />
-        <MyShoppingCart />
+        <AllTheThings products={products} addToCart={addToCart}/>
+        <MyShoppingCart cart={cart} removeFromCart={removeFromCart}/>
       </div>
     </div>
   );

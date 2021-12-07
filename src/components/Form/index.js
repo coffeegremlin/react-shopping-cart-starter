@@ -3,7 +3,7 @@ import React from 'react';
 function Form(props) {
   return (
     <div className="Form">
-      <h2>Form goes here</h2>
+      <h1>Buy somethin ya bum.</h1>
     </div>
   );
 }
